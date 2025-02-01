@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Knowledge - Introduction to Accounting Software</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+        #quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #quiz-container h2 {
+            margin-bottom: 20px;
+        }
+        .question {
+            margin: 15px 0;
+            display: none;
+        }
+        .question input {
+            margin-right: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            display: none;
+        }
+        #result p {
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            #quiz-container {
+                width: 100%;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h2>Test Your Knowledge - You have 10 questions!</h2>
+
+    <button id="startQuizBtn">Start Quiz</button>
+
+    <div id="questions">
+        <div class="question">
+            <p>What is the primary purpose of accounting software like Excel or Google Sheets?</p>
+            <label><input type="radio" name="q1" value="a"> To automate the bookkeeping process</label><br>
+            <label><input type="radio" name="q1" value="b"> To make the financial statements look better</label><br>
+            <label><input type="radio" name="q1" value="c"> To create invoices for clients only</label><br>
+        </div>
+
+        <div class="question">
+            <p>Which of the following is a key feature of accounting software?</p>
+            <label><input type="radio" name="q2" value="a"> Ability to automatically generate invoices</label><br>
+            <label><input type="radio" name="q2" value="b"> Performing tax calculations without input</label><br>
+            <label><input type="radio" name="q2" value="c"> Ability to automatically generate payroll</label><br>
+        </div>
+
+        <div class="question">
+            <p>Which of the following Excel functions is commonly used for managing financial data?</p>
+            <label><input type="radio" name="q3" value="a"> VLOOKUP</label><br>
+            <label><input type="radio" name="q3" value="b"> HLOOKUP</label><br>
+            <label><input type="radio" name="q3" value="c"> IF</label><br>
+        </div>
+
+        <div class="question">
+            <p>In Google Sheets, which of the following is an example of a useful feature for accounting?</p>
+            <label><input type="radio" name="q4" value="a"> Google Forms integration</label><br>
+            <label><input type="radio" name="q4" value="b"> Google Analytics integration</label><br>
+            <label><input type="radio" name="q4" value="c"> Pivot Tables and Charts</label><br>
+        </div>
+
+        <div class="question">
+            <p>What does Excel's SUM function do?</p>
+            <label><input type="radio" name="q5" value="a"> Adds up the values in a range of cells</label><br>
+            <label><input type="radio" name="q5" value="b"> Subtracts values from a range of cells</label><br>
+            <label><input type="radio" name="q5" value="c"> Multiplies the values in a range of cells</label><br>
+        </div>
+
+        <div class="question">
+            <p>How can you protect sensitive financial data in Excel?</p>
+            <label><input type="radio" name="q6" value="a"> By password protecting the file</label><br>
+            <label><input type="radio" name="q6" value="b"> By using colorful formatting</label><br>
+            <label><input type="radio" name="q6" value="c"> By adding a watermark</label><br>
+        </div>
+
+        <div class="question">
+            <p>Which of the following Excel tools is used to summarize financial data into a concise format?</p>
+            <label><input type="radio" name="q7" value="a"> Pivot Table</label><br>
+            <label><input type="radio" name="q7" value="b"> Text-to-Columns</label><br>
+            <label><input type="radio" name="q7" value="c"> Data Validation</label><br>
+        </div>
+
+        <div class="question">
+            <p>What is the benefit of using Google Sheets for accounting?</p>
+            <label><input type="radio" name="q8" value="a"> It allows real-time collaboration on financial documents</label><br>
+            <label><input type="radio" name="q8" value="b"> It automatically reconciles bank statements</label><br>
+            <label><input type="radio" name="q8" value="c"> It automatically generates income statements</label><br>
+        </div>
+
+        <div class="question">
+            <p>What does the Excel function 'IF' do in accounting applications?</p>
+            <label><input type="radio" name="q9" value="a"> It checks if a condition is met and returns one value if true and another if false</label><br>
+            <label><input type="radio" name="q9" value="b"> It calculates the total sum of a range of cells</label><br>
+            <label><input type="radio" name="q9" value="c"> It searches for a value in a specific range</label><br>
+        </div>
+
+        <div class="question">
+            <p>Which function in Excel can be used to look up a value in a table or range?</p>
+            <label><input type="radio" name="q10" value="a"> VLOOKUP</label><br>
+            <label><input type="radio" name="q10" value="b"> COUNTIF</label><br>
+            <label><input type="radio" name="q10" value="c"> SUMIF</label><br>
+        </div>
+
+        <button id="submitBtn" style="display:none;">Submit</button>
+        <button id="retakeQuizBtn" style="display:none;" onclick="retakeQuiz()">Retake Quiz</button>
+    </div>
+
+    <div id="result" style="display:none;">
+        <p id="score"></p>
+    </div>
+</div>
+
+<script>
+    const startQuizBtn = document.getElementById('startQuizBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const resultDiv = document.getElementById('result');
+    const scoreText = document.getElementById('score');
+    const questions = document.querySelectorAll('.question');
+    const retakeQuizBtn = document.getElementById('retakeQuizBtn');
+
+    const correctAnswers = {
+        q1: 'a',
+        q2: 'a',
+        q3: 'a',
+        q4: 'c',
+        q5: 'a',
+        q6: 'a',
+        q7: 'a',
+        q8: 'a',
+        q9: 'a',
+        q10: 'a'
+    };
+
+    let score = 0;
+
+    startQuizBtn.addEventListener('click', () => {
+        startQuizBtn.style.display = 'none';
+        questions.forEach(question => question.style.display = 'block');
+        submitBtn.style.display = 'inline-block';
+    });
+
+    submitBtn.addEventListener('click', () => {
+        score = 0;
+        questions.forEach(question => {
+            const selectedAnswer = question.querySelector('input:checked');
+            const questionName = question.querySelector('input').name;
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[questionName]) {
+                score++;
+            }
+        });
+        scoreText.textContent = `You got ${score} out of 10`;
+        resultDiv.style.display = 'block';
+        submitBtn.style.display = 'none';
+        retakeQuizBtn.style.display = 'inline-block';
+    });
+
+    function retakeQuiz() {
+        questions.forEach(question => {
+            question.querySelector('input').checked = false;
+        });
+        resultDiv.style.display = 'none';
+        retakeQuizBtn.style.display = 'none';
+        startQuizBtn.style.display = 'inline-block';
+    }
+</script>
+
+</body>
+</html>
